@@ -1,0 +1,9 @@
+{
+  "port": 8090,
+  "development": {
+    "ip": "https://www.fastmock.site/mock/66601674b5477a0fba029a95778cb994/api"
+  },
+  "production": {
+    "ip":"https://www.fastmock.site/mock/66601674b5477a0fba029a95778cb994/api"
+  }
+}
