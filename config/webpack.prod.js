@@ -9,6 +9,7 @@ const common = require('./webpack.common.js');
 module.exports = merge.smart(common, {
   mode: 'production',
   output: {
+    publicPath: '/src',
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, '..', 'dist/src')
   },
@@ -31,7 +32,7 @@ module.exports = merge.smart(common, {
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.HashedModuleIdsPlugin(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(), 打包文件大小
     new OptimizeCSSAssetsPlugin({}),
-  ]
+  ],
 });

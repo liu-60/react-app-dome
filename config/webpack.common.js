@@ -14,6 +14,7 @@ module.exports = {
     app: './src/index.js'
   },
   output: {
+    publicPath: '/src',
     filename: '[name].bundle.js',
   },
   optimization: {
@@ -96,10 +97,10 @@ module.exports = {
   },
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
-    new webpack.DllReferencePlugin({
-      context: process.cwd(),
-      manifest: require(path.resolve(__dirname, '..', 'dist', 'dll', "react_antd-manifest.json"))
-    }),
+    // new webpack.DllReferencePlugin({
+    //   context: process.cwd(),
+    //   manifest: require(path.resolve(__dirname, '..', 'dist', 'dll', "react_antd-manifest.json"))
+    // }),
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
@@ -114,7 +115,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname, '..', 'dist/index.html'),
-      template: path.resolve(__dirname, '..', 'dist/dll/index.html'),
+      template: path.resolve(__dirname, '../index.html'),
     }),
     new HappyPack({
       id: 'js',
