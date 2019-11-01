@@ -18,7 +18,7 @@ npm start
 ├── common
 │   ├── constant.js     // 常量
 │   ├── fetch.js        // 请求 fetch 封装
-│   ├── http.js         // 请求 axios 封装
+│   ├── http.js         // 请求 axios 封装 有处理mock的地方
 │   └── utils.js        // 工具
 ├── docker
 │   ├── **.yml          // 镜像文件
